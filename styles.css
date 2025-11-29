@@ -1,3 +1,4 @@
+/* Simple styling that matches the provided spec */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -17,12 +18,24 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+#todo-app h1 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
 #task-input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    outline: none;
+    font-size: 14px;
+}
+
+#task-input:focus {
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.08);
+    border-color: #007bff;
 }
 
 #add-task-btn {
@@ -33,6 +46,7 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
 }
 
 #add-task-btn:hover {
@@ -42,6 +56,7 @@ body {
 ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 12px;
 }
 
 li {
@@ -52,8 +67,10 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    word-break: break-word;
 }
 
+/* Remove button */
 .remove-btn {
     cursor: pointer;
     background-color: #ff6347;
@@ -61,8 +78,15 @@ li {
     border: none;
     border-radius: 4px;
     padding: 5px 10px;
+    font-size: 13px;
 }
 
 .remove-btn:hover {
     background-color: #d9534f;
+}
+
+/* Small responsive tweak */
+@media (max-width: 420px) {
+    #todo-app { padding: 16px; }
+    #task-input, #add-task-btn { font-size: 13px; }
 }
